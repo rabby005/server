@@ -1,0 +1,11 @@
+#!/bin/bash
+target=$1
+mkdir ~/serverversion/$1
+cd ~/serverversion/$1
+http --headers $1 -o  1.txt
+cat 1.txt | grep "Server:" > 2.txt
+cat 1.txt | grep "Location:" >> 2.txt
+cat 2.txt 
+rm -rf 1.txt
+
+
